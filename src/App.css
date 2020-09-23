@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Rock+Salt&display=swap');
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 24px;
+  font-family: 'Rock Salt', cursive;
+  height: 100vh;
+}
+
+.main .container {
+  padding: 8px;
+  width: 600px;
+  height: 600px;
+  position: relative;
+  background-color: #feff9c;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.heading {
+  font-size: 2em;
+  text-align: center;
+  margin: 16px;
+}
+
+.underlined {
+  position: relative;
+  margin-right: 1rem;
+}
+
+.underlined:after {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  height: 32px;
+  width: 100%;
+  border: solid 2px #cb1829;
+  border-color: #cb1829 transparent transparent transparent;
+  border-radius: 50%;
+}
+
+.floating-btn {
+  width: 56px;
+  height: 56px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 6px 10px 0 #666;
+  font-size: 44px;
+  line-height: 52px;
+  text-align: center;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  transition: all 0.1s ease-in-out;
+}
+
+.floating-btn:hover {
+  box-shadow: 0 6px 14px 0 #666;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.todos-container {
+  height: 80%;
+  scrollbar-width: thin;
+  overflow: auto;
+}
+
+@media only screen and (max-device-width: 480px) {
+
+  .heading {
+    font-size: 1.5em;
+  }
+  .main .container {
+    width: 100%;
+    height: 90%;
+  }
+
+  .floating-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+.todos-container::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.todos-container::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.todos-container::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+}

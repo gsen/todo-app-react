@@ -1,0 +1,118 @@
+.todo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px;
+    line-height: 2em;
+    position: relative;
+}
+
+.task-status {
+    flex: 6%;
+    cursor: pointer;
+}
+
+.task-title {
+    font-size: 1.5em;
+    flex: 90%;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    overflow: hidden;
+    padding: 4px;
+    margin: 4px;
+}
+
+[contenteditable] {
+    outline: 1px solid rgba(0, 0, 0, .1);
+}
+
+.task-delete-btn {
+    flex: 5%;
+    color: #cb1829;
+    font-size: 2em;
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.task-edit-btn {
+    flex: 5%;
+    font-size: 2em;
+    cursor: pointer;
+    font-weight: 900;
+    transform: rotate(90deg);
+}
+
+
+.task-status.done:after {
+    content: '\2713\0020';
+    position: absolute;
+    top: 0.4em;
+    left: 0;
+    font-size: 2em;
+    color: #09ad7e;
+    transition: all .2s;
+    font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
+}
+
+.task-status.incomplete:after {
+    content: '\2212\0020';
+    position: absolute;
+    top: 0.4em;
+    left: 0;
+    font-size: 2em;
+    color: rgba(0, 0, 0, .1);
+    transition: all .2s;
+    font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
+}
+
+@media only screen and (max-device-width: 480px) {
+    .todo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 8px;
+        position: relative;
+    }
+
+    .task-status {
+        flex: 15%;
+        height: 20px;
+        width: 20px;
+    }
+
+    .task-title {
+        flex: 80%;
+        font-size: 1.2em;
+    }
+
+    .task-delete-btn {
+        flex: 5%;
+        font-size: 1.5em;
+    }
+}
+
+.blur-on-delete {
+	-webkit-animation: blur-on-delete 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: blur-on-delete 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+ @-webkit-keyframes blur-on-delete {
+    0% {
+      -webkit-filter: blur(0.01);
+              filter: blur(0.01);
+    }
+    100% {
+      -webkit-filter: blur(12px) opacity(0%);
+              filter: blur(12px) opacity(0%);
+    }
+  }
+  @keyframes blur-on-delete {
+    0% {
+      -webkit-filter: blur(0.01);
+              filter: blur(0.01);
+    }
+    100% {
+      -webkit-filter: blur(12px) opacity(0%);
+              filter: blur(12px) opacity(0%);
+    }
+  }
+  
